@@ -1,14 +1,16 @@
 <template>
   <div>
-    Count is {{ count }}
+    Count is {{ counter }}
   </div>
 </template>
 
 <script>
+import store from '../store'
+
 export default {
-  data () {
-    return {
-      count: 0
+  computed: {
+    counter () {
+      return store.state.counter
     }
   }
 }
