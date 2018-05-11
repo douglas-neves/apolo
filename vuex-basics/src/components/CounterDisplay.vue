@@ -1,15 +1,21 @@
 <template>
   <div>
-    Count is {{ count }}
+    Count is {{ sharedState.counter }}
   </div>
 </template>
 
 <script>
+
+import store from '../store';
+
 export default {
-  data () {
+  data () { // Vue Magic
     return {
-      count: 0
+      // Estado compartilhado
+      sharedState: store.state,
     }
   }
 }
 </script>
+
+
