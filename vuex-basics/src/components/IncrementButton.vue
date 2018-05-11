@@ -6,7 +6,7 @@
 export default {
   methods: {
     activate () {
-      console.log('+1 Pressed')
+      this.$dispatch('button-pressed');
     }
   }
 }
