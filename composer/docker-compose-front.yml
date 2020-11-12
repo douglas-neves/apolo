@@ -1,0 +1,28 @@
+version: "3"
+
+services:
+  front:
+    container_name: front
+    build:
+      context: .
+      dockerfile: ../images/node/Dockerfile
+      args:
+        DIR: /var/www/html/front
+    expose:
+      - "8080"
+    volumes:
+      - "./wwwdata:/var/www/html"
+    networks:
+      ambiente_dev:
+        ipv4_address: "172.16.222.10"
+    depends_on:
+      - "nginx"
+
+networks:
+  ambiente_dev:
+    driver: "bridge"
+    ipam:
+      driver: "default"
+      config:
+      -
+        subnet: "172.16.222.0/24"

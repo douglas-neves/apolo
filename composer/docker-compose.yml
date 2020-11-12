@@ -1,0 +1,23 @@
+version: "3"
+
+services:
+  nginx:
+    image: nginx:1.17-alpine
+    container_name: nginx
+    expose:
+      - "80"
+    volumes:
+      - "./config:/etc/nginx/conf.d" # Diretório contendo os vhosts de todas as apps
+      - "./wwwdata:/var/www/html"
+    networks:
+      ambiente_dev:
+        ipv4_address: "172.16.222.2"
+
+networks:
+  ambiente_dev:
+    driver: "bridge"
+    ipam:
+      driver: "default"
+      config:
+      -
+        subnet: "172.16.222.0/24"

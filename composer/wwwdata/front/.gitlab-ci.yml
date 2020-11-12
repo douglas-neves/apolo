@@ -1,0 +1,26 @@
+stages:
+  - build
+  - lint
+  - test
+
+cache:
+  key: ${CI_COMMIT_REF_SLUG}
+  paths:
+    - node_modules
+
+Testes unitarios:
+  image: node:14.14.0
+  stage: test
+  tags:
+    - docker
+  script:
+    - yarn && yarn test-mock --coverage
+  coverage: /All\sfiles.*?\s+(\d+.\d+)/
+
+Lint:
+  image: node:14.14.0
+  stage: lint
+  tags:
+    - docker
+  script:
+    - yarn && yarn lint
