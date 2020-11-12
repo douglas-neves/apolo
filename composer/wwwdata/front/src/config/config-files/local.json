@@ -1,0 +1,36 @@
+{
+  "global": {},
+  "locales": [
+    {
+      "name": "BRL",
+      "locale": "pt-BR",
+      "flag": "bra",
+      "selected": true
+    },
+    {
+      "name": "USA",
+      "locale": "en-US",
+      "flag": "us",
+      "selected": false
+    },
+    {
+      "name": "Spain",
+      "locale": "es-ES",
+      "flag": "es",
+      "selected": false
+    }
+  ],
+  "httpClient": {
+    "tokenKey": "rocket-editor-token"
+  },
+  "theme": {
+    "apiUrls": {
+      "fetchTheme": "http://rocket.local/api/template"
+    }
+  },
+  "logo": {
+    "apiUrls": {
+      "updateLogo": "http://rocket.local/api/logo"
+    }
+  }
+}

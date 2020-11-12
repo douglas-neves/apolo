@@ -1,0 +1,63 @@
+{
+  "name": "vue3-rocket-boilerplate",
+  "version": "v1.0.0",
+  "private": true,
+  "scripts": {
+    "serve-mock": "json-server db.json & cross-env VUE_APP_CONFIG=mock vue-cli-service serve --mode development",
+    "serve-local": "cross-env VUE_APP_CONFIG=local vue-cli-service serve --mode development",
+    "build": "cross-env VUE_APP_CONFIG=live vue-cli-service build --mode production",
+    "build-mock": "cross-env VUE_APP_CONFIG=mock vue-cli-service build --mode production",
+    "test-mock": "cross-env VUE_APP_CONFIG=mock vue-cli-service test:unit",
+    "test-local": "cross-env VUE_APP_CONFIG=local vue-cli-service test:unit",
+    "test-beta": "cross-env VUE_APP_CONFIG=beta vue-cli-service test:unit",
+    "test-live": "cross-env VUE_APP_CONFIG=live vue-cli-service test:unit",
+    "test-all": "yarn run test-mock && yarn run test-local && yarn run test-beta && yarn run test-live",
+    "lint": "vue-cli-service lint",
+    "prettier": "prettier '**/*.{json,js,ts,vue}'",
+    "postinstall": "husky install"
+  },
+  "dependencies": {
+    "axios": "^0.21.0",
+    "core-js": "^3.6.5",
+    "module-alias": "^2.2.2",
+    "vue": "^3.0.0",
+    "vue-class-component": "^8.0.0-0",
+    "vue-custom-element": "^3.2.14"
+  },
+  "devDependencies": {
+    "@babel/helper-validator-option": "^7.12.1",
+    "@types/jest": "^26.0.15",
+    "@types/vue-i18n": "^7.0.0",
+    "@typescript-eslint/eslint-plugin": "^2.33.0",
+    "@typescript-eslint/parser": "^2.33.0",
+    "@vue/cli-plugin-babel": "~4.5.0",
+    "@vue/cli-plugin-eslint": "~4.5.0",
+    "@vue/cli-plugin-router": "~4.5.4",
+    "@vue/cli-plugin-typescript": "~4.5.4",
+    "@vue/cli-plugin-unit-jest": "~4.5.0",
+    "@vue/cli-plugin-vuex": "~4.5.4",
+    "@vue/cli-service": "~4.5.0",
+    "@vue/compiler-sfc": "^3.0.0",
+    "@vue/eslint-config-prettier": "^6.0.0",
+    "@vue/eslint-config-typescript": "^5.0.2",
+    "@vue/test-utils": "^2.0.0-beta.9",
+    "babel-eslint": "^10.1.0",
+    "cross-env": "^7.0.2",
+    "eslint": "^6.7.2",
+    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-vue": "^7.0.0-0",
+    "husky": "^5.0.0-beta.0",
+    "jest": "^26.6.3",
+    "json-server": "^0.16.2",
+    "node-sass": "^4.12.0",
+    "prettier": "^2.1.2",
+    "sass-loader": "^8.0.2",
+    "typescript": "~3.9.3",
+    "vue-jest": "^5.0.0-alpha.5"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ]
+}
